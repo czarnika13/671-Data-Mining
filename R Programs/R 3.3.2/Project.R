@@ -1,6 +1,9 @@
 library(dplyr)
 library(lubridate)
 
+#Read read_output file and prepare it for Tableau visualizations
+
+
 #Read File into the system
 final_tags <- read.csv("~/PycharmProjects/F16/Data Mining/Project/final_tags.csv", header=TRUE)
 
