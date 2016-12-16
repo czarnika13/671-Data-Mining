@@ -1,0 +1,1026 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 9100.16.0628.2314                                -->
+<workbook source-platform='mac' version='9.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='bymonth' inline='true' name='textscan.42718.838162789354' version='9.1'>
+      <connection class='textscan' directory='/Users/czarnika' filename='bymonth.csv' password='' server='' username=''>
+        <relation name='bymonth#csv' table='[bymonth#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='string' name='month' ordinal='1' />
+            <column datatype='string' name='tag' ordinal='2' />
+            <column datatype='integer' name='counter' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[bymonth#csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[bymonth#csv]</parent-name>
+            <remote-alias>month</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tag</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tag]</local-name>
+            <parent-name>[bymonth#csv]</parent-name>
+            <remote-alias>tag</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>counter</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[counter]</local-name>
+            <parent-name>[bymonth#csv]</parent-name>
+            <remote-alias>counter</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[bymonth#csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Counter' datatype='integer' name='[counter]' role='measure' type='quantitative' />
+      <column caption='Month' datatype='string' name='[month]' role='dimension' type='nominal' />
+      <column caption='Tag' datatype='string' name='[tag]' role='dimension' type='nominal' />
+      <column-instance column='[tag]' derivation='Attribute' name='[attr:tag:nk]' pivot='key' type='nominal' />
+      <column-instance column='[tag]' derivation='None' name='[none:tag:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[attr:tag:nk]' type='palette'>
+            <map to='#1f77b4'>
+              <bucket>&quot; cancer&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>%many-values%</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot; pain&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:tag:nk]' type='palette'>
+            <map to='#17becf'>
+              <bucket>&quot; breast&quot;</bucket>
+            </map>
+            <map to='#17becf'>
+              <bucket>&quot; condom&quot;</bucket>
+            </map>
+            <map to='#17becf'>
+              <bucket>&quot; fibromyalgia&quot;</bucket>
+            </map>
+            <map to='#17becf'>
+              <bucket>&quot; lose&quot;</bucket>
+            </map>
+            <map to='#17becf'>
+              <bucket>&quot; vitamin&quot;</bucket>
+            </map>
+            <map to='#1f77b4'>
+              <bucket>&quot; cancer&quot;</bucket>
+            </map>
+            <map to='#1f77b4'>
+              <bucket>&quot; D&quot;</bucket>
+            </map>
+            <map to='#1f77b4'>
+              <bucket>&quot; food&quot;</bucket>
+            </map>
+            <map to='#1f77b4'>
+              <bucket>&quot; low&quot;</bucket>
+            </map>
+            <map to='#1f77b4'>
+              <bucket>&quot; rash&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot; diet&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot; hair&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot; lupus&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot; men&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot; skin&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot; zika&quot;</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>&quot; bacon&quot;</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>&quot; exercise&quot;</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>&quot; kidney&quot;</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>&quot; polish&quot;</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>&quot; TMJ&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot; brain&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot; drug&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot; in&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot; nutrition&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot; sugar&quot;</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>&quot; dogs&quot;</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>&quot; heart&quot;</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>&quot; nail&quot;</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>&quot; pregnancy&quot;</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>&quot; stem&quot;</bucket>
+            </map>
+            <map to='#98df8a'>
+              <bucket>&quot; after&quot;</bucket>
+            </map>
+            <map to='#98df8a'>
+              <bucket>&quot; disease&quot;</bucket>
+            </map>
+            <map to='#98df8a'>
+              <bucket>&quot; have&quot;</bucket>
+            </map>
+            <map to='#98df8a'>
+              <bucket>&quot; menopause&quot;</bucket>
+            </map>
+            <map to='#98df8a'>
+              <bucket>&quot; sleep&quot;</bucket>
+            </map>
+            <map to='#9edae5'>
+              <bucket>&quot; caffeine&quot;</bucket>
+            </map>
+            <map to='#9edae5'>
+              <bucket>&quot; constipation&quot;</bucket>
+            </map>
+            <map to='#9edae5'>
+              <bucket>&quot; flu&quot;</bucket>
+            </map>
+            <map to='#9edae5'>
+              <bucket>&quot; loss&quot;</bucket>
+            </map>
+            <map to='#9edae5'>
+              <bucket>&quot; quizzes&quot;</bucket>
+            </map>
+            <map to='#9edae5'>
+              <bucket>&quot; we&quot;</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>&quot; a&quot;</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>&quot; dementia&quot;</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>&quot; foods&quot;</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>&quot; lung&quot;</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>&quot; screening&quot;</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>&quot; with&quot;</bucket>
+            </map>
+            <map to='#bcbd22'>
+              <bucket>&quot; bipolar&quot;</bucket>
+            </map>
+            <map to='#bcbd22'>
+              <bucket>&quot; eye&quot;</bucket>
+            </map>
+            <map to='#bcbd22'>
+              <bucket>&quot; fat&quot;</bucket>
+            </map>
+            <map to='#bcbd22'>
+              <bucket>&quot; leprosy&quot;</bucket>
+            </map>
+            <map to='#bcbd22'>
+              <bucket>&quot; treating&quot;</bucket>
+            </map>
+            <map to='#c49c94'>
+              <bucket>&quot; autism&quot;</bucket>
+            </map>
+            <map to='#c49c94'>
+              <bucket>&quot; drugs&quot;</bucket>
+            </map>
+            <map to='#c49c94'>
+              <bucket>&quot; infection&quot;</bucket>
+            </map>
+            <map to='#c49c94'>
+              <bucket>&quot; oral&quot;</bucket>
+            </map>
+            <map to='#c49c94'>
+              <bucket>&quot; tea&quot;</bucket>
+            </map>
+            <map to='#c5b0d5'>
+              <bucket>&quot; attention&quot;</bucket>
+            </map>
+            <map to='#c5b0d5'>
+              <bucket>&quot; drinking&quot;</bucket>
+            </map>
+            <map to='#c5b0d5'>
+              <bucket>&quot; how&quot;</bucket>
+            </map>
+            <map to='#c5b0d5'>
+              <bucket>&quot; nails&quot;</bucket>
+            </map>
+            <map to='#c5b0d5'>
+              <bucket>&quot; stress&quot;</bucket>
+            </map>
+            <map to='#c7c7c7'>
+              <bucket>&quot; beer&quot;</bucket>
+            </map>
+            <map to='#c7c7c7'>
+              <bucket>&quot; calories&quot;</bucket>
+            </map>
+            <map to='#c7c7c7'>
+              <bucket>&quot; lead&quot;</bucket>
+            </map>
+            <map to='#c7c7c7'>
+              <bucket>&quot; questions&quot;</bucket>
+            </map>
+            <map to='#c7c7c7'>
+              <bucket>&quot; training&quot;</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>&quot; disorder&quot;</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>&quot; health&quot;</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>&quot; mental&quot;</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>&quot; smoking&quot;</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>&quot; weight&quot;</bucket>
+            </map>
+            <map to='#dbdb8d'>
+              <bucket>&quot; blood&quot;</bucket>
+            </map>
+            <map to='#dbdb8d'>
+              <bucket>&quot; cholesterol&quot;</bucket>
+            </map>
+            <map to='#dbdb8d'>
+              <bucket>&quot; fiber&quot;</bucket>
+            </map>
+            <map to='#dbdb8d'>
+              <bucket>&quot; leukemia&quot;</bucket>
+            </map>
+            <map to='#dbdb8d'>
+              <bucket>&quot; treatments&quot;</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>&quot; baby&quot;</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>&quot; eating&quot;</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>&quot; is&quot;</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>&quot; protein&quot;</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>&quot; test&quot;</bucket>
+            </map>
+            <map to='#f7b6d2'>
+              <bucket>&quot; back&quot;</bucket>
+            </map>
+            <map to='#f7b6d2'>
+              <bucket>&quot; eczema&quot;</bucket>
+            </map>
+            <map to='#f7b6d2'>
+              <bucket>&quot; jaw&quot;</bucket>
+            </map>
+            <map to='#f7b6d2'>
+              <bucket>&quot; people&quot;</bucket>
+            </map>
+            <map to='#f7b6d2'>
+              <bucket>&quot; that&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot; depression&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot; gain&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot; pain&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot; prostate&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot; service&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot; women&quot;</bucket>
+            </map>
+            <map to='#ff9896'>
+              <bucket>&quot; are&quot;</bucket>
+            </map>
+            <map to='#ff9896'>
+              <bucket>&quot; dog&quot;</bucket>
+            </map>
+            <map to='#ff9896'>
+              <bucket>&quot; healthy&quot;</bucket>
+            </map>
+            <map to='#ff9896'>
+              <bucket>&quot; mouth&quot;</bucket>
+            </map>
+            <map to='#ff9896'>
+              <bucket>&quot; sores&quot;</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>&quot; about&quot;</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>&quot; diabetes&quot;</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>&quot; gluten&quot;</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>&quot; marijuana&quot;</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>&quot; shingles&quot;</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>&quot; you&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='overall' inline='true' name='textscan.42718.851928877317' version='9.1'>
+      <connection class='textscan' directory='/Users/czarnika' filename='overall.csv' password='' server='' username=''>
+        <relation name='overall#csv' table='[overall#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='string' name='tag' ordinal='1' />
+            <column datatype='integer' name='counter' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[overall#csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tag</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tag]</local-name>
+            <parent-name>[overall#csv]</parent-name>
+            <remote-alias>tag</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>counter</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[counter]</local-name>
+            <parent-name>[overall#csv]</parent-name>
+            <remote-alias>counter</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[overall#csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Counter' datatype='integer' name='[counter]' role='measure' type='quantitative' />
+      <column caption='Tag' datatype='string' name='[tag]' role='dimension' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Keywords By Month'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bymonth' name='textscan.42718.838162789354' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.42718.838162789354'>
+            <column caption='Counter' datatype='integer' name='[counter]' role='measure' type='quantitative' />
+            <column caption='Month' datatype='string' name='[month]' role='dimension' type='nominal' />
+            <column-instance column='[month]' derivation='None' name='[none:month:nk]' pivot='key' type='nominal' />
+            <column-instance column='[tag]' derivation='None' name='[none:tag:nk]' pivot='key' type='nominal' />
+            <column-instance column='[counter]' derivation='Sum' name='[sum:counter:qk]' pivot='key' type='quantitative' />
+            <column caption='Tag' datatype='string' name='[tag]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[textscan.42718.838162789354].[none:month:nk]'>
+            <groupfilter from='&quot;Apr&quot;' function='range' level='[none:month:nk]' to='&quot;Sep&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <sort class='natural' column='[textscan.42718.838162789354].[none:month:nk]' direction='ASC' />
+          <filter class='categorical' column='[textscan.42718.838162789354].[none:tag:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:tag:nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; a&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; about&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; after&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; are&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; attention&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; autism&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; baby&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; back&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; bacon&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; beer&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; bipolar&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; blood&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; brain&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; breast&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; caffeine&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; calories&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; cholesterol&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; condom&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; constipation&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; D&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; dementia&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; depression&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; diabetes&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; diet&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; disorder&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; dog&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; dogs&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; drinking&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; drug&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; drugs&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; eating&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; eczema&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; exercise&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; eye&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; fat&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; fiber&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; fibromyalgia&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; flu&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; food&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; foods&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; gain&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; gluten&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; hair&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; have&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; healthy&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; heart&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; how&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; in&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; infection&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; is&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; jaw&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; kidney&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; lead&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; leprosy&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; leukemia&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; lose&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; loss&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; low&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; lung&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; lupus&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; marijuana&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; men&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; menopause&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; mental&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; mouth&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; nail&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; nails&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; nutrition&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; oral&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; people&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; polish&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; pregnancy&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; prostate&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; protein&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; questions&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; quizzes&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; rash&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; screening&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; service&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; shingles&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; skin&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; smoking&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; sores&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; stem&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; stress&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; sugar&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; tea&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; test&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; that&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; TMJ&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; training&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; treating&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; treatments&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; vitamin&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; we&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; weight&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; with&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; women&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; you&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <sort class='computed' column='[textscan.42718.838162789354].[none:tag:nk]' direction='DESC' using='[textscan.42718.838162789354].[sum:counter:qk]' />
+          <slices>
+            <column>[textscan.42718.838162789354].[none:tag:nk]</column>
+            <column>[textscan.42718.838162789354].[none:month:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='line-pattern' scope='rows' value='none' />
+            <format attr='line-pattern' scope='cols' value='solid' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[textscan.42718.838162789354].[none:tag:nk]' value='16' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' scope='rows' value='4' />
+            <format attr='line-pattern' value='solid' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-size' scope='cols' value='3' />
+            <format attr='stroke-size' scope='rows' value='4' />
+            <format attr='line-pattern' value='solid' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-pattern' value='none' />
+            <format attr='line-pattern' scope='cols' value='none' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='line-pattern' scope='cols' value='none' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[textscan.42718.838162789354].[none:tag:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-pattern' value='solid' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[textscan.42718.838162789354].[sum:counter:qk]</rows>
+        <cols>([textscan.42718.838162789354].[none:month:nk] / [textscan.42718.838162789354].[none:tag:nk])</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Keywords Overall'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bymonth' name='textscan.42718.838162789354' />
+          </datasources>
+          <datasource-dependencies datasource='textscan.42718.838162789354'>
+            <column caption='Counter' datatype='integer' name='[counter]' role='measure' type='quantitative' />
+            <column-instance column='[tag]' derivation='None' name='[none:tag:nk]' pivot='key' type='nominal' />
+            <column-instance column='[counter]' derivation='Sum' name='[sum:counter:qk]' pivot='key' type='quantitative' />
+            <column caption='Tag' datatype='string' name='[tag]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[textscan.42718.838162789354].[none:tag:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:tag:nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; a&quot;' />
+                <groupfilter function='member' level='[none:tag:nk]' member='&quot; in&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <sort class='manual' column='[textscan.42718.838162789354].[none:tag:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot; cancer&quot;</bucket>
+              <bucket>&quot; heart&quot;</bucket>
+              <bucket>&quot; health&quot;</bucket>
+              <bucket>&quot; pain&quot;</bucket>
+              <bucket>&quot; disease&quot;</bucket>
+              <bucket>&quot; zika&quot;</bucket>
+              <bucket>&quot; sleep&quot;</bucket>
+              <bucket>&quot; diet&quot;</bucket>
+              <bucket>&quot; in&quot;</bucket>
+              <bucket>&quot; diabetes&quot;</bucket>
+              <bucket>&quot; weight&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </sort>
+          <filter class='quantitative' column='[textscan.42718.838162789354].[sum:counter:qk]' included-values='in-range'>
+            <min>30</min>
+          </filter>
+          <slices>
+            <column>[textscan.42718.838162789354].[sum:counter:qk]</column>
+            <column>[textscan.42718.838162789354].[none:tag:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[textscan.42718.838162789354].[none:tag:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[textscan.42718.838162789354].[sum:counter:qk]</rows>
+        <cols>[textscan.42718.838162789354].[none:tag:nk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows>
+    <window class='schema' source-height='-1' />
+    <window auto-hidden='0' class='worksheet' maximized='1' name='Keywords By Month'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[textscan.42718.838162789354].[none:tag:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[textscan.42718.838162789354].[none:tag:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <highlight>
+        <color-one-way>
+          <field>[textscan.42718.838162789354].[attr:tag:nk]</field>
+          <field>[textscan.42718.838162789354].[none:month:nk]</field>
+          <field>[textscan.42718.838162789354].[none:tag:nk]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+    <window auto-hidden='0' class='worksheet' maximized='0' name='Keywords Overall'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[textscan.42718.838162789354].[none:tag:nk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[textscan.42718.838162789354].[sum:counter:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card param='[textscan.42718.838162789354].[none:tag:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <highlight>
+        <color-one-way>
+          <field>[textscan.42718.838162789354].[none:tag:nk]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Keywords By Month' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Keywords Overall' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
